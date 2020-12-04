@@ -1,0 +1,47 @@
+{
+  "title": "Configuration",
+  "description": "Startpage configuration settings",
+  "type": "object",
+  "properties": {
+    "name": {
+      "title": "Username",
+      "description": "The username to use in the greeting if enabled.",
+      "examples": ["John"],
+      "type": "string"
+    },
+    "clock": {
+      "title": "Clock Settings",
+      "description": "Configuration options for the clock display.",
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "format": {
+          "type": "string",
+          "default": "%H:%M"
+        },
+        "timeZone": {
+          "type": "string",
+          "default": "America/Los_Angeles"
+        }
+      }
+    },
+    "search": {
+      "title": "Search Settings",
+      "description": "Configuration options for the search bar.",
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "engine": {
+          "type": "string",
+          "enum": ["Google", "DuckDuckGo", "Bing", "Yahoo", "Ecosia"]
+        }
+      }
+    }
+  }
+}

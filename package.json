@@ -1,0 +1,36 @@
+{
+  "name": "startpage",
+  "version": "1.0.0",
+  "description": "Minimalist chrome/firefox startpage",
+  "main": "index.js",
+  "keywords": [],
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm dist/bundle.js",
+    "build": "webpack --mode production",
+    "build-dev": "webpack --mode development",
+    "build-prod": "webpack --mode production",
+    "server": "webpack-dev-server --hot --mode development",
+    "server-dev": "webpack-dev-server --hot --mode development",
+    "server-prod": "webpack-dev-server --mode production"
+  },
+  "devDependencies": {
+    "css-loader": "^5.0.1",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "html-webpack-plugin": "^4.5.0",
+    "node-sass": "^5.0.0",
+    "prettier": "^2.2.1",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "jsoneditor": "^9.1.4",
+    "lodash": "^4.17.20"
+  }
+}

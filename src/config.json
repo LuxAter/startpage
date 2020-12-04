@@ -1,0 +1,25 @@
+{
+  "name": "Arden",
+  "clock": {
+    "enabled": true,
+    "format": "%H:%M:%S",
+    "timeZone": "America/Los_Angeles"
+  },
+  "weather": {
+    "enabled": true,
+    "location": "Portland, OR",
+    "unit": "f"
+  },
+  "search": {
+    "enabled": true,
+    "engine": "Google"
+  },
+  "theme": {
+    "bg": "#282c34",
+    "fg": "#c8ccd4",
+    "secondaryFg": "#4aa5f0",
+    "containerBg": "#3e4451",
+    "searchBg": "#353b45",
+    "scrollbarColor": "#565c64"
+  }
+}
