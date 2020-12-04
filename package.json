@@ -10,15 +10,16 @@
     "build": "webpack --mode production",
     "build-dev": "webpack --mode development",
     "build-prod": "webpack --mode production",
-    "server": "webpack-dev-server --hot --mode development",
-    "server-dev": "webpack-dev-server --hot --mode development",
-    "server-prod": "webpack-dev-server --mode production"
+    "serve": "webpack-dev-server --hot --mode development",
+    "serve-dev": "webpack-dev-server --hot --mode development",
+    "serve-prod": "webpack-dev-server --mode production"
   },
   "devDependencies": {
     "css-loader": "^5.0.1",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
     "node-sass": "^5.0.0",
     "prettier": "^2.2.1",

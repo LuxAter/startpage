@@ -1,14 +1,20 @@
 {
-  "name": "Arden",
+  "greeter": {
+    "enabled": true,
+    "name": "Arden",
+    "line": 1
+  },
   "clock": {
     "enabled": true,
     "format": "%H:%M:%S",
+    "line": 2,
     "timeZone": "America/Los_Angeles"
   },
   "weather": {
     "enabled": true,
     "location": "Portland, OR",
-    "unit": "f"
+    "line": 2,
+    "unit": "Fahrenheit"
   },
   "search": {
     "enabled": true,

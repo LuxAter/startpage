@@ -26,6 +26,10 @@ const config = {
         test: /\.svg$/,
         use: ["url-loader"],
       },
+      {
+        test: /\.(woff|woff2|eot|ttf|ort)$/,
+        use: ["file-loader"],
+      }
     ],
   },
   plugins: [

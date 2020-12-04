@@ -1,5 +1,37 @@
 $background: #212121;
 $foreground: #fff;
+$bg: #282c34;
+$fg: #c8ccd4;
+$secondaryFg: #4aa5f0;
+$containerBg: #3e4451;
+$searchBg: #353b45;
+$scrollbarColor: #565c64;
+
+$bg0:  #282c34;
+$bg1:  #353b45;
+$bg2:  #3e4451;
+$bg3:  #545862;
+$bg4:  #565c64;
+$fg4:  #abb2bf;
+$fg3:  #abb2bf;
+$fg2:  #b6bdca;
+$fg1:  #c8ccd4;
+$fg0:  #e6e6e6;
+$red:  #e05561;
+$green:  #8cc265;
+$yellow:  #d19a66;
+$blue:  #4aa5f0;
+$magenta:  #c162de;
+$cyan:  #42b3c2;
+$orange:  #d19a66;
+$brightRed:  #ff616e;
+$brightGreen:  #a5e075;
+$brightYellow:  #f0a45d;
+$brightBlue:  #4dc4ff;
+$brightMagenta:  #de73ff;
+$brightCyan:  #4cd1e0;
+$brightOrange:  #f0a45d;
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 $media: #4DD0E1;
 $work: #F06292;
@@ -11,221 +43,237 @@ $upvoty: #FF8A65;
 $indigo: #7986CB;
 $foxxy: #A1887F;
 
-.roboto {
-    font-family: 'Roboto', sans-serif;
+
+@import 'fonts/iosevka.css';
+
+html {
+  font-size: 16px;
 }
-
-// JetBrains Mono
-// @font-face {
-//     font-family: "JetBrains Mono";
-    // src: url("../fonts/woff/JetBrainsMono-Regular.woff") format("woff"),
-    //      url("../fonts/woff2/JetBrainsMono-Regular.woff2") format("woff2");
-// }
-
-.jetbrains-mono {
-    font-family: 'Roboto';
-}
-
 body {
     height: 97.5vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: $background;
-    color: $foreground;
-    @extend .jetbrains-mono;
+    background: $bg0;
+    color: $fg1;
+    font-family: 'Iosevka Web';
+}
+
+h2, h3, h4, p {
+  font-size: 1em;
 }
 
 .main {
     width: 100%;
     text-align: center;
 
-    #date {
-        h2 {
-            padding-top: 15px;
-            display: inline-block;
-            vertical-align: top;
-        }
+    #line1 {
+      display: none;
+      font-size: 4rem;
+      h2 { margin: 0; color: $fg0; display: none; }
+      p { margin: 0; color: $bg4; display: none; }
     }
 
-    #date-text, #weather-text {
-        color: darken($foreground, 15);
+    #line2 {
+      display: none;
+      font-size: 3rem;
+      h3 { margin: 0; color: $fg2; display: none; }
+      p { margin: 0; color: $bg2; display: none; }
     }
 
-    #message-text {
-        font-size: 23px;
+    #line3 {
+      display: none;
+      font-size: 2rem;
+      h4 { margin: 0; color: $fg4; display: none; }
+      p { margin: 0; color: $bg1; display: none; }
     }
 
-    #search-bar {
-        width: 50%;
-        margin: 0 auto 50px auto;
-        height: 45px;
-        padding-top: 35px;
-        position: relative;
-        display: inline-block;
-
-
-        #search-bar-input {
-            height: 50px;
-            width: 100%;
-            background: lighten($background, 5);
-            box-shadow: none;
-            border: none;
-            text-align: center;
-            border-radius: 6px;
-            outline: none;
-            padding: 7px 14px;
-            font-size: 18px;
-            color: $foreground;
-            box-sizing: border-box;
-
-            &:focus {
-                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-                transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-            }
-        }
-
-        .autocomplete-items-container {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            z-index: 99;
-            border-radius: 6px;
-            background: lighten($background, 5);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-
-            .autocomplete-item {
-                width: 100%;
-                background: lighten($background, 5);
-                box-shadow: none;
-                border: none;
-                text-align: center;
-                outline: none;
-                padding: 7px 14px;
-                font-size: 18px;
-                color: $foreground;
-                box-sizing: border-box;
-                z-index: -1;
-
-                &:hover {
-                    background: lighten($background, 10);
-                }
-            }
-
-            .autocomplete-active {
-                background: lighten($background, 8);
-            }
-        }
-
-        @media only screen and (max-width: 791px) {
-            width: 65%;
-        }
-    }
-
-    #other-content {
-        margin: 40px auto;
-        padding: 10px 0;
-
-        .sqr {
-            vertical-align: top;
-            display: inline-block;
-            margin-left: 5px;
-            margin-right: 5px;
-            width: 170px;
-            background: lighten($background, 5);
-            padding: 15px 15px;
-            border-radius: 6px;
-            min-height: 150px;
-            margin-top: 10px;
-
-            h4 {
-                font-size: 18px;
-                margin: 15px;
-
-                a {
-                    color: inherit;
-                    font-size: inherit;
-                }
-          }
-
-            &:hover {
-                box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-                transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-            }
-
-            a {
-                color: #9E9E9E;
-                font-size: 16px;
-                transition: .1s ease-in;
-                display: block;
-                text-decoration: none;
-                line-height: 22px;
-
-                &:hover {
-                    color: $foreground;
-                    text-decoration: none;
-                    transition: .1s ease-in;
-                }
-            }
-        }
-
-        .media {
-            h4, a:hover {
-                color: $media;
-            }
-        }
-
-        .work {
-            h4, a:hover {
-                color: $work;
-            }
-        }
-
-        .social {
-            h4, a:hover {
-                color: $social;
-            }
-            
-        }
-
-        .others {
-            h4, a:hover {
-                color: $others;
-            }
-        }
-
-        .funky {
-            h4, a:hover {
-                color: $funky;
-            }
-        }
-
-        .purple {
-            h4, a:hover {
-                color: $purple;
-            }
-        }
-
-        .upvoty {
-            h4, a:hover {
-                color: $upvoty;
-            }
-        }
-
-        .indigo {
-            h4, a:hover {
-                color: $indigo;
-            }
-        }
-
-        .foxxy {
-            h4, a:hover {
-                color: $foxxy;
-            }
-        }
-    }
+    // #date {
+    //     h2 {
+    //         padding-top: 15px;
+    //         display: inline-block;
+    //         vertical-align: top;
+    //     }
+    // }
+    //
+    // #date-text, #weather-text {
+    //     color: darken($foreground, 15);
+    // }
+    //
+    // #message-text {
+    //     font-size: 23px;
+    // }
+    //
+    // #search-bar {
+    //     width: 50%;
+    //     margin: 0 auto 50px auto;
+    //     height: 45px;
+    //     padding-top: 35px;
+    //     position: relative;
+    //     display: inline-block;
+    //
+    //
+    //     #search-bar-input {
+    //         height: 50px;
+    //         width: 100%;
+    //         background: lighten($background, 5);
+    //         box-shadow: none;
+    //         border: none;
+    //         text-align: center;
+    //         border-radius: 6px;
+    //         outline: none;
+    //         padding: 7px 14px;
+    //         font-size: 18px;
+    //         color: $foreground;
+    //         box-sizing: border-box;
+    //
+    //         &:focus {
+    //             box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    //             transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    //         }
+    //     }
+    //
+    //     .autocomplete-items-container {
+    //         position: absolute;
+    //         top: 100%;
+    //         left: 0;
+    //         right: 0;
+    //         z-index: 99;
+    //         border-radius: 6px;
+    //         background: lighten($background, 5);
+    //         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    //         transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    //
+    //         .autocomplete-item {
+    //             width: 100%;
+    //             background: lighten($background, 5);
+    //             box-shadow: none;
+    //             border: none;
+    //             text-align: center;
+    //             outline: none;
+    //             padding: 7px 14px;
+    //             font-size: 18px;
+    //             color: $foreground;
+    //             box-sizing: border-box;
+    //             z-index: -1;
+    //
+    //             &:hover {
+    //                 background: lighten($background, 10);
+    //             }
+    //         }
+    //
+    //         .autocomplete-active {
+    //             background: lighten($background, 8);
+    //         }
+    //     }
+    //
+    //     @media only screen and (max-width: 791px) {
+    //         width: 65%;
+    //     }
+    // }
+    //
+    // #other-content {
+    //     margin: 40px auto;
+    //     padding: 10px 0;
+    //
+    //     .sqr {
+    //         vertical-align: top;
+    //         display: inline-block;
+    //         margin-left: 5px;
+    //         margin-right: 5px;
+    //         width: 170px;
+    //         background: lighten($background, 5);
+    //         padding: 15px 15px;
+    //         border-radius: 6px;
+    //         min-height: 150px;
+    //         margin-top: 10px;
+    //
+    //         h4 {
+    //             font-size: 18px;
+    //             margin: 15px;
+    //
+    //             a {
+    //                 color: inherit;
+    //                 font-size: inherit;
+    //             }
+    //       }
+    //
+    //         &:hover {
+    //             box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    //             transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    //         }
+    //
+    //         a {
+    //             color: #9E9E9E;
+    //             font-size: 16px;
+    //             transition: .1s ease-in;
+    //             display: block;
+    //             text-decoration: none;
+    //             line-height: 22px;
+    //
+    //             &:hover {
+    //                 color: $foreground;
+    //                 text-decoration: none;
+    //                 transition: .1s ease-in;
+    //             }
+    //         }
+    //     }
+    //
+    //     .media {
+    //         h4, a:hover {
+    //             color: $media;
+    //         }
+    //     }
+    //
+    //     .work {
+    //         h4, a:hover {
+    //             color: $work;
+    //         }
+    //     }
+    //
+    //     .social {
+    //         h4, a:hover {
+    //             color: $social;
+    //         }
+    //         
+    //     }
+    //
+    //     .others {
+    //         h4, a:hover {
+    //             color: $others;
+    //         }
+    //     }
+    //
+    //     .funky {
+    //         h4, a:hover {
+    //             color: $funky;
+    //         }
+    //     }
+    //
+    //     .purple {
+    //         h4, a:hover {
+    //             color: $purple;
+    //         }
+    //     }
+    //
+    //     .upvoty {
+    //         h4, a:hover {
+    //             color: $upvoty;
+    //         }
+    //     }
+    //
+    //     .indigo {
+    //         h4, a:hover {
+    //             color: $indigo;
+    //         }
+    //     }
+    //
+    //     .foxxy {
+    //         h4, a:hover {
+    //             color: $foxxy;
+    //         }
+    //     }
+    // }
 }
 
 .settings {
@@ -256,20 +304,4 @@ body {
             cursor: pointer;
             }
       }
-}
-
-#settings-cog {
-    width: 23px;
-    height: 23px;
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
-    transition: 2s ease-in;
-    display: none;
-    
-    &:hover .cog {
-        fill: white;
-        stroke: white;
-        transition: 2s ease-in;
-    }
 }
